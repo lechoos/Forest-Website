@@ -89,4 +89,8 @@ function handleKits(done) {
 const mainFunctions = parallel(handleKits, sassCompiler, javaScript, imageConversion);
 
 exports.default = series(mainFunctions, startBrowserSync, watchForChanges);
+exports.mainFunctions = mainFunctions;
+exports.browserSync = startBrowserSync;
+exports.watch = watchForChanges;
+exports.img = imageConversion;
 exports.cleanStuff = cleanStuff;
