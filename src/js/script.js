@@ -1,5 +1,5 @@
 const navItems = document.querySelector('.nav__items');
-const navBtn = document.querySelector('.hamburger');
+const navBtn = document.querySelector('.nav__btn');
 const allNavItems = document.querySelectorAll('.nav__link');
 
 navBtn.addEventListener('click', () => {

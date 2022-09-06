@@ -15,10 +15,10 @@
 }
 
 body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
 	background-color: $mainColor;
 	color: $secondColor;
-	font-size: 1.6rem;
-	font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
@@ -28,122 +28,135 @@ body {
 }
 
 .sticky-body {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 // NAWIGACJA
 
-a {
-	color: $secondColor;
-	text-decoration: none;
+.nav {
+	background-color: $mainColor;
+
+    &__logo, 
+    &__link {
+        color: $secondColor;
+        text-decoration: none;
+    }
+
+	&__btn {
+		position: sticky;
+		top: 0.5em;
+		left: 0.5em;
+		padding: 0.7em;
+		font-size: 2.2rem;
+		cursor: pointer;
+		z-index: 2;
+	}
+
+	&__items {
+		position: absolute;
+		top: 50%;
+		display: flex;
+		justify-content: center;
+		height: 100vh;
+		background-color: $mainColor;
+		transform: translate(-102%, -50%);
+		transition: transform 0.3s;
+	}
+
+	&--active {
+		transform: translate(0, -50%);
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__link {
+		margin: 0.3em 0;
+		padding: 1em 0.5em;
+	}
+
+	&__logo {
+		display: none;
+	}
 }
 
-.nav {
-    
-    &__btn {
-        position: sticky;
-        top: 0.5em;
-        left: 0.5em;
-        padding: 0.7em;
-        font-size: 2.2rem;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 2;
-    }
-    
-    &__items {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100vh;
-        background-color: $mainColor;
-        transform: translateX(-102%);
-        transition: transform 0.3s;
-    }
+// HEADER
 
-    &--active {
-        transform: translateX(0);
-    }
-
-    &__links {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        z-index: -2;
-    }
-
-    &__link {
-        margin: 0.3em 0;
-        padding: 1em 0.5em;
-    }
-
-    &__logo {
-        display: none;
-    }
+.header {
+    background-image: url('../img/jungle-small.jpg');
 }
 
 // MEDIA QUERIES
 
 @media (min-width: 576px) {
-
 }
 
 @media (min-width: 768px) {
-    .nav {
-        &__btn {
-            display: none;
-        }
+	.nav {
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: auto;
 
-        &__logo {
-            display: block;
-            margin-left: 1em;
-            padding: 0.2em;
-            font-size: 1.8rem;
-        }
+		&__btn {
+			display: none;
+		}
 
-        &__items {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: auto;
-            transform: translateX(0);
-        }
+		&__logo {
+			display: block;
+			margin-left: 1em;
+			padding: 0.2em;
+			font-size: 1.8rem;
+		}
 
-        &__links {
-            flex-direction: row;
-            margin-right: 1em;
-        }
-        
-        &__link {
-            margin: 0 0.7em;
-            padding: 2em 1em;
-            font-size: 1.2rem;
-            transition: background-color 0.3s, color 0.3s;
+		&__items {
+			position: relative;
+			justify-content: space-between;
+			align-items: center;
+			transform: translate(0);
+			height: auto;
+		}
 
-            &:hover {
-                background-color: $secondColor;
-                color: $mainColor;
-            }
-        }
-    }
+		&__links {
+			flex-direction: row;
+			margin-right: 1em;
+			padding: 0 1.5em;
+			width: 50%;
+		}
+
+		&__link {
+			margin: 0;
+			padding: 2em 0;
+			width: 25%;
+			font-size: 1.2rem;
+			text-align: center;
+			transition: background-color 0.3s, color 0.3s;
+
+			&:hover {
+				background-color: $secondColor;
+				color: $mainColor;
+			}
+		}
+	}
 }
 
 @media (min-width: 992px) {
-    .nav {
-        &__logo {
-            font-size: 2.4rem;
-        }
+	.nav {
+		&__logo {
+			font-size: 2.4rem;
+		}
 
-        &__link {
-            font-size: 1.4rem;
-        }
-    }
+		&__link {
+			font-size: 1.4rem;
+		}
+	}
 }
 
 @media (min-width: 1200px) {
-	
 }
