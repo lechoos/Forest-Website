@@ -9,7 +9,7 @@
 	padding: 0;
 }
 
-.html {
+html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 }
@@ -54,8 +54,8 @@ body {
 		position: sticky;
 		top: 0.5em;
 		left: 0.5em;
-		padding: 0.7em;
-		font-size: 2.2rem;
+		padding: 0.7em 0.5em;
+		font-size: 2.7rem;
 		cursor: pointer;
 		z-index: 4;
 	}
@@ -65,7 +65,7 @@ body {
 		top: 50%;
 		display: flex;
 		justify-content: center;
-		height: 100vh;
+		height: 200vh;
 		background-color: $mainColor;
 		transform: translate(-102%, -50%);
 		transition: transform 0.6s;
@@ -87,6 +87,7 @@ body {
 	&__link {
 		margin: 0.3em 0;
 		padding: 1em 0.5em;
+		font-size: 2rem;
 	}
 
 	&__logo {
@@ -121,22 +122,87 @@ body {
 	}
 
 	&__text {
-		margin-bottom: 0.2em;
-		font-size: 1rem;
+		margin-bottom: 0.4em;
+		font-size: 1.4rem;
 	}
 
 	&__heading {
-		font-size: 1.8rem;	
+		font-size: 2.9rem;	
+	}
+}
+
+// O NAS
+
+.aboutus {
+	display: flex;
+	justify-content: center;
+	padding: 2.1em 1.6em;
+
+	&__header {
+		margin-bottom: 1.3em;
+		font-weight: 300;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__img {
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	&__text {
+		h3 {
+			margin: 1em 0 0.7em;
+			font-size: 2rem;
+			text-align: center;
+		}
+
+		p {
+			padding: 0 1.2em;
+			font-size: 1.4rem;
+		}
 	}
 }
 
 // MEDIA QUERIES
 
 @media (min-width: 576px) {
+	.nav {
+		&__btn {
+			padding: 0.7em;
+		}
+	}
+	
 	.header {
-		padding: 6em 2em;
+		padding: 7em 2em;
+
+		&__text {
+			font-size: 1.6rem;
+		}
+
+		&__heading {
+			font-size: 3.2rem;
+		}
 	}
 
+	.aboutus {
+		padding: 2.6em 2em;
+
+		&__header {
+			font-size: 2.8rem;
+		}
+
+		&__text {
+			h3 {
+				margin: 1.4em 0 0.9em;
+				font-size: 2.5rem;
+			}
+
+			p {
+				font-size: 1.7rem;
+			}
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -155,7 +221,7 @@ body {
 			display: block;
 			margin-left: 1.7em;
 			padding: 0.2em;
-			font-size: 1.8rem;
+			font-size: 2.6rem;
 		}
 
 		&__items {
@@ -176,7 +242,7 @@ body {
 			margin: 0;
 			padding: 2em 0;
 			width: 25%;
-			font-size: 1rem;
+			font-size: 1.5rem;
 			text-align: center;
 			transition: background-color 0.3s, color 0.3s;
 
@@ -187,13 +253,36 @@ body {
 		}
 	}
 
-	.header {
-		&__text {
-			font-size: 1.3rem;
+	.aboutus {
+		padding: 3.2em 2em;
+		&__items {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2em;
+		}
+		
+		&__header {
+			grid-column: 1/-1;
 		}
 
-		&__heading {
-			font-size: 2rem;
+		&__img {
+			grid-column: 1/2;
+			height: 100%;
+		}
+
+		&__text {
+			grid-column: 2/3;
+
+			h3 {
+				margin: -0.2em 0 0.6em;
+				font-size: 2.1rem;
+				text-align: left;
+			}
+
+			p {
+				padding: 0;
+				font-size: 1.5rem;
+			}
 		}
 	}
 }
@@ -202,17 +291,31 @@ body {
 	.nav {
 		&__logo {
 			margin-left: 3.1em;
-			font-size: 2rem;
+			font-size: 2.6rem;
 		}
 
 		&__link {
-			font-size: 1.2rem;
+			font-size: 1.7rem;
 		}
 	}
 
 	.header {
-		padding: 6.5em 4em;
+		padding: 8em 4em;
 		background-image: url('../img/jungle-big.jpg');
+	}
+
+	.aboutus {
+		padding: 3.6em 4em;
+
+		&__header {
+			margin-bottom: 1.5em;
+		}
+
+		&__text {
+			p {
+				line-height: 2.5rem;
+			}
+		}
 	}
 }
 
@@ -220,6 +323,24 @@ body {
 	.nav {
 		&__logo {
 			margin-left: 0;
+			font-size: 3rem;
+		}
+
+		&__link {
+			font-size: 1.9rem;
+		}
+	}
+
+	.header {
+		padding: 10em 2em;
+	}
+
+	.aboutus {
+		&__text {
+			p {
+				font-size: 1.8rem;
+				line-height: 3rem;
+			}
 		}
 	}
 }
