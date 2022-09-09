@@ -31,12 +31,18 @@ body {
 	max-width: 1200px;
 }
 
-.mini-wrapper {
-	max-width: 900px;
-}
-
 .sticky-body {
 	overflow: hidden;
+}
+
+.section-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.65);
+	z-index: -1;
 }
 
 // NAWIGACJA
@@ -105,16 +111,6 @@ body {
 	background-position: center;
 	z-index: 0;
 
-	&__shadow {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.65);
-		z-index: -1;
-	}
-
 	&__text, 
 	&__heading {
 		color: $mainColor;
@@ -164,6 +160,26 @@ body {
 	}
 }
 
+// ADVENTURE
+
+.adventure {
+	position: relative;
+	padding: 2em;
+	background-image: url(../img/girl-small.jpg);
+	background-size: cover;
+	background-position: center;
+	z-index: 0;
+
+	&__text {
+		padding: 1em 0.2em;
+		font-size: 1.5rem;
+		color: $mainColor;
+		border: 1px solid $mainColor;
+		text-align: center;
+		z-index: 1;
+	}
+}
+
 // MEDIA QUERIES
 
 @media (min-width: 576px) {
@@ -201,6 +217,15 @@ body {
 			p {
 				font-size: 1.7rem;
 			}
+		}
+	}
+
+	.adventure {
+		padding: 3em 6em;
+
+		&__text {
+			padding: 1em 0;
+			font-size: 2.3rem;
 		}
 	}
 }
@@ -285,6 +310,14 @@ body {
 			}
 		}
 	}
+
+	.adventure {
+		padding: 4em 8em;
+
+		&__text {
+			font-size: 2.7rem;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -315,6 +348,15 @@ body {
 			p {
 				line-height: 2.5rem;
 			}
+		}
+	}
+
+	.adventure {
+		padding: 5em 10.5em;
+		background-image: url(../img/girl-big.jpg);
+
+		&__text {
+			font-size: 3rem;
 		}
 	}
 }
