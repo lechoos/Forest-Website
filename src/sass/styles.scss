@@ -21,13 +21,9 @@ body {
 	color: $secondColor;
 }
 
-.wrapper,
-.mini-wrapper {
+.wrapper {
 	margin: 0 auto;
 	width: 100%;
-}
-
-.wrapper {
 	max-width: 1200px;
 }
 
@@ -180,6 +176,80 @@ body {
 	}
 }
 
+// OFERTA
+
+.offers {
+	padding: 2.1em 1.6em;
+	
+	&__header {
+		font-weight: 300;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__paragraph {
+		margin: 1em 0;
+		font-weight: 400;
+		text-align: center;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		margin-top: 2em;
+	}
+
+	&__card {
+		display: inline-block;
+		margin: 1em 6em;
+		padding: 1em 2em;
+		border-radius: 8px;
+		box-shadow: 0 0 10px #8f8989;
+		transition: transform 0.3s;
+
+		&-header {
+			font-size: 2rem;
+			font-weight: 400;
+			text-align: center;
+		}
+
+		&-price {
+			margin: 0.2em 0;
+			font-size: 3rem;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		&-option {
+			margin: 0.5em 0;
+			font-size: 1.3rem;
+			text-align: center;
+		}
+
+		&-button {
+			margin: 1em 0;
+			padding: 0.5em 1em;
+			width: 100%;
+			font-size: 1.3rem;
+			border: none;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px #8f8989;
+			cursor: pointer;
+
+			&--green {
+				position: relative;
+				background-color: #22c437;
+
+			}
+		}
+
+		&:hover {
+			transform: scale(0.92);
+		}
+	}
+}
+
 // MEDIA QUERIES
 
 @media (min-width: 576px) {
@@ -319,6 +389,16 @@ body {
 			font-size: 2.7rem;
 		}
 	}
+
+	.offers {
+		&__cards {
+			flex-direction: row;
+		}
+
+		&__card {
+			margin: 1em;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -357,6 +437,7 @@ body {
 		background-image: url(../img/girl-big.jpg);
 
 		&__text {
+			margin: 0 2em;
 			font-size: 3rem;
 		}
 	}
@@ -384,6 +465,12 @@ body {
 				font-size: 1.8rem;
 				line-height: 3rem;
 			}
+		}
+	}
+
+	.adventure {
+		&__text {
+			margin: 0 4em;
 		}
 	}
 }
