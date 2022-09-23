@@ -12,5 +12,6 @@ allNavItems.forEach(el => {
     el.addEventListener('click', () => {
         navItems.classList.remove('nav--active');
         navBtn.classList.remove('is-active');
+        document.body.classList.remove('sticky-body');
     })
 })
