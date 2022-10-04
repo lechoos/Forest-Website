@@ -4,3 +4,7 @@
 	text-transform: uppercase;
 	text-align: center;
 }
+
+@mixin section-margin {
+	margin: 0 10rem;
+}

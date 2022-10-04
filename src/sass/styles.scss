@@ -211,6 +211,25 @@ body {
 		text-align: center;
 	}
 
+	&__link {
+		position: relative;
+		left: 50%;
+		display: inline-block;
+		margin-top: 2em;
+		padding: 1em 2em;
+		font-size: 2rem;
+		color: $mainColor;
+		background-color: $selectionColor;
+		border-radius: 8px;
+		text-decoration: none;
+		transform: translateX(-50%);
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: #3b693b;
+		}
+	}
+
 	&__cards {
 		display: grid;
 		justify-content: center;
@@ -554,6 +573,18 @@ body {
 				font-size: 1.8rem;
 				line-height: 3rem;
 			}
+		}
+	}
+
+	.adventure {
+		&__text {
+			@include section-margin;
+		}
+	}
+
+	.offers {
+		&__cards {
+			@include section-margin;
 		}
 	}
 }
