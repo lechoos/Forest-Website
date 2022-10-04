@@ -1,0 +1,56 @@
+.header-padding {
+  padding: 4.5em 1.5em;
+}
+
+.section-padding,
+.section-small-padding {
+  padding: 2em 1.5em;
+}
+
+@media (min-width: 576px) {
+  .header-padding {
+    padding: 7em 2em;
+  }
+
+  .section-padding {
+    padding: 3em 2em;
+  }
+
+  .section-small-padding {
+    padding: 2em 5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-padding {
+    padding: 0 2em;
+  }
+
+  .section-small-padding {
+    padding: 3em 8em;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-padding {
+    padding: 0 4em;
+  }
+
+  .header-padding {
+    padding: 8em 4em;
+  }
+
+  .section-padding {
+    padding: 4em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-padding {
+    padding: 10em 4em;
+  }
+
+  .section-padding {
+    padding: 4.5em 4em 5.5em;
+  }
+}

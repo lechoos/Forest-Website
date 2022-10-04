@@ -1,5 +1,6 @@
 @use './utilities/colors' as *;
 @forward './utilities/hamburger';
+@forward './utilities/sizes';
 
 *,
 *::after,
@@ -46,7 +47,11 @@ body {
 	z-index: -1;
 }
 
+
+
 // NAWIGACJA
+
+
 
 .nav {
 	background-color: $mainColor;
@@ -102,12 +107,15 @@ body {
 	}
 }
 
+
+
 // HEADER
+
+
 
 .header {
 	position: relative;
-	padding: 4.5em 1.5em;
-    background-image: url('../img/jungle-small.jpg');
+  background-image: url('../img/jungle-small.jpg');
 	background-size: cover;
 	background-position: center;
 	z-index: 0;
@@ -128,12 +136,15 @@ body {
 	}
 }
 
+
+
 // O NAS
+
+
 
 .aboutus {
 	display: flex;
 	justify-content: center;
-	padding: 2.1em 1.6em;
 
 	&__header {
 		margin-bottom: 1.3em;
@@ -155,24 +166,26 @@ body {
 		}
 
 		p {
-			padding: 0 1.2em;
 			font-size: 1.4rem;
 		}
 	}
 }
 
+
+
 // ADVENTURE
+
+
 
 .adventure {
 	position: relative;
-	padding: 2em;
 	background-image: url(../img/girl-small.jpg);
 	background-size: cover;
 	background-position: center;
 	z-index: 0;
 
 	&__text {
-		padding: 1em 0.2em;
+		padding: 1em 0;
 		font-size: 1.5rem;
 		color: $mainColor;
 		border: 1px solid $mainColor;
@@ -181,11 +194,13 @@ body {
 	}
 }
 
+
+
 // OFERTA
 
+
+
 .offers {
-	padding: 2.1em 1.6em;
-	
 	&__header {
 		font-size: 2.8rem;
 		font-weight: 300;
@@ -279,7 +294,11 @@ body {
 	}
 }
 
+
+
 // MEDIA QUERIES
+
+
 
 @media (min-width: 576px) {
 	.nav {
@@ -289,8 +308,6 @@ body {
 	}
 	
 	.header {
-		padding: 7em 2em;
-
 		&__text {
 			font-size: 1.6rem;
 		}
@@ -301,8 +318,6 @@ body {
 	}
 
 	.aboutus {
-		padding: 2.6em 2em;
-
 		&__header {
 			font-size: 2.8rem;
 		}
@@ -320,11 +335,10 @@ body {
 	}
 
 	.adventure {
-		padding: 3em 6em;
+		// padding: 3em 6em;
 		background-attachment: fixed;
 
 		&__text {
-			padding: 1em 0;
 			font-size: 2.3rem;
 		}
 	}
@@ -335,6 +349,10 @@ body {
 		}
 	}
 }
+
+
+
+
 
 @media (min-width: 768px) {
 	.nav {
@@ -350,7 +368,6 @@ body {
 
 		&__logo {
 			display: block;
-			margin-left: 1.7em;
 			padding: 0.2em;
 			font-size: 2.6rem;
 		}
@@ -365,7 +382,6 @@ body {
 
 		&__links {
 			flex-direction: row;
-			padding: 0 1.5em;
 			width: 50%;
 		}
 
@@ -385,7 +401,6 @@ body {
 	}
 
 	.aboutus {
-		padding: 3.2em 2em;
 		&__items {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
@@ -418,7 +433,7 @@ body {
 	}
 
 	.adventure {
-		padding: 4em 8em;
+		// padding: 4em 8em;
 
 		&__text {
 			font-size: 2.7rem;
@@ -426,8 +441,6 @@ body {
 	}
 
 	.offers {
-		padding: 2.1em 3em;
-
 		&__cards {
 			grid-template-rows: repeat(2, 1fr);
 			grid-template-columns: repeat(4, 1fr);
@@ -447,26 +460,22 @@ body {
 	}
 }
 
+
+
+
+
 @media (min-width: 992px) {
 	.nav {
-		&__logo {
-			margin-left: 3.1em;
-			font-size: 2.6rem;
-		}
-
 		&__link {
 			font-size: 1.7rem;
 		}
 	}
 
 	.header {
-		padding: 8em 4em;
 		background-image: url('../img/jungle-big.jpg');
 	}
 
 	.aboutus {
-		padding: 3.6em 4em;
-
 		&__header {
 			margin-bottom: 1.5em;
 		}
@@ -479,15 +488,42 @@ body {
 	}
 
 	.adventure {
-		padding: 5em 10.5em;
+		// padding: 5em 10.5em;
 		background-image: url(../img/girl-big.jpg);
 
 		&__text {
-			margin: 0 2em;
+			// margin: 0 2em;
 			font-size: 3rem;
 		}
 	}
+
+	.offers {
+		&__cards {
+			grid-template-rows: 1fr;
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		&__card {
+			grid-row: 1/-1;
+
+			&--demo {
+				grid-column: 1/2;
+			}
+
+			&--standard {
+				grid-column: 2/3;
+			}
+
+			&--premium {
+				grid-column: 3/-1;
+			}
+		}
+	}
 }
+
+
+
+
 
 @media (min-width: 1200px) {
 	.nav {
@@ -501,22 +537,12 @@ body {
 		}
 	}
 
-	.header {
-		padding: 10em 2em;
-	}
-
 	.aboutus {
 		&__text {
 			p {
 				font-size: 1.8rem;
 				line-height: 3rem;
 			}
-		}
-	}
-
-	.adventure {
-		&__text {
-			margin: 0 4em;
 		}
 	}
 }
