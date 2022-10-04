@@ -1,4 +1,5 @@
 @use './utilities/colors' as *;
+@use './utilities/mixins' as *;
 @forward './utilities/hamburger';
 @forward './utilities/sizes';
 
@@ -148,9 +149,7 @@ body {
 
 	&__header {
 		margin-bottom: 1.3em;
-		font-weight: 300;
-		text-transform: uppercase;
-		text-align: center;
+		@include section-header;
 	}
 
 	&__img {
@@ -202,14 +201,12 @@ body {
 
 .offers {
 	&__header {
-		font-size: 2.8rem;
-		font-weight: 300;
-		text-align: center;
-		text-transform: uppercase;
+		@include section-header;
 	}
 
 	&__paragraph {
 		margin: 1em 0 2em;
+		font-size: 1.7rem;
 		font-weight: 400;
 		text-align: center;
 	}
@@ -227,7 +224,8 @@ body {
 		display: flex;
 		flex-direction: column;
 		padding: 2em 1em;
-		border: 1px solid black;
+		border-radius: 10px;
+		box-shadow: 0 3px 5px #a7a2a2;
 		transition: transform 0.3s;
 
 		&--demo {
@@ -288,7 +286,7 @@ body {
 			background-color: transparent;
 			border: none;
 			border-radius: 2px;
-			box-shadow: 0 0 10px black;
+			box-shadow: 0 2px 5px #a39999;
 			cursor: pointer;
 		}
 	}
@@ -344,6 +342,10 @@ body {
 	}
 
 	.offers {
+		&__header {
+			font-size: 2.8rem;
+		}
+
 		&__card {
 			grid-column: 2/4;
 		}
@@ -409,6 +411,7 @@ body {
 		
 		&__header {
 			grid-column: 1/-1;
+			font-size: 3rem;
 		}
 
 		&__img {
@@ -441,6 +444,14 @@ body {
 	}
 
 	.offers {
+		&__header {
+			font-size: 3rem;
+		}
+
+		&__paragraph {
+			font-size: 1.9rem;
+		}
+
 		&__cards {
 			grid-template-rows: repeat(2, 1fr);
 			grid-template-columns: repeat(4, 1fr);
