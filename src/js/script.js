@@ -1,6 +1,7 @@
 const navItems = document.querySelector('.nav__items');
 const navBtn = document.querySelector('.nav__btn');
 const allNavItems = document.querySelectorAll('.nav__link');
+const footerYear = document.querySelector('.footer__year');
 
 navBtn.addEventListener('click', () => {
     navItems.classList.toggle('nav--active');
@@ -15,6 +16,9 @@ allNavItems.forEach(el => {
         document.body.classList.remove('sticky-body');
     })
 })
+
+const year = new Date().getFullYear();
+footerYear.textContent = year;
 
 // window.location.replace("#");
     
