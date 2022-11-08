@@ -1,5 +1,7 @@
 @use './utilities/colors' as *;
 @use './utilities/mixins' as *;
+@forward './utilities/offers';
+@forward './utilities/contact';
 @forward './utilities/hamburger';
 @forward './utilities/sizes';
 
@@ -55,7 +57,7 @@ body {
 
 
 .nav {
-	background-color: $mainColor;
+	background-color: $footerColor;
 
     &__logo, 
     &__link {
@@ -79,7 +81,7 @@ body {
 		display: flex;
 		justify-content: center;
 		height: 200vh;
-		background-color: $mainColor;
+		background-color: $footerColor;
 		transform: translate(-102%, -50%);
 		transition: transform 0.6s;
 		z-index: 2;
@@ -218,14 +220,14 @@ body {
 		margin-top: 2em;
 		padding: 1em 2em;
 		color: $mainColor;
-		background-color: $selectionColor;
+		background-color: $buttonColor;
 		border-radius: 8px;
 		text-decoration: none;
 		transform: translateX(-50%);
 		transition: background-color 0.3s;
 
 		&:hover {
-			background-color: #3b693b;
+			background-color: $selectionColor;
 		}
 	}
 
@@ -305,7 +307,22 @@ body {
 			border: none;
 			border-radius: 2px;
 			box-shadow: 0 2px 5px #a39999;
+			transition: background-color 0.3s;
 			cursor: pointer;
+
+			&:hover {
+				background-color: #e2d3d3;
+			}
+
+			&--green {
+				color: #fff;
+				background-color: #17c517;
+				box-shadow: 0 2px 5px #25a125;
+
+				&:hover {
+					background-color: #2c792c;
+				}
+			}
 		}
 	}
 }
@@ -400,7 +417,6 @@ body {
 	}
 
 	.adventure {
-		// padding: 3em 6em;
 		background-attachment: fixed;
 
 		&__text {
