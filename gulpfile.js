@@ -64,7 +64,7 @@ function cleanStuff(done) {
 function startBrowserSync(done) {
 	browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: paths.dist
         }
     });
 	done();
@@ -81,7 +81,7 @@ function watchForChanges(done) {
 function handleKits(done) {
 	src(paths.html)
 	.pipe(kit())
-	.pipe(dest(dist))
+	.pipe(dest(paths.dist))
 
 	done()
 }
