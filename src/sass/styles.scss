@@ -50,7 +50,28 @@ body {
 	z-index: -1;
 }
 
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  height: 50vh;
 
+  &__text {
+    font-size: 1.6rem;
+  }
+
+  &__link {
+    padding: 1em 2em;
+    background-color: $buttonColor;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $selectionColor;
+    }
+  }
+}
 
 // NAWIGACJA
 
