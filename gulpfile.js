@@ -81,7 +81,7 @@ function watchForChanges(done) {
 function handleKits(done) {
 	src(paths.html)
 	.pipe(kit())
-	.pipe(dest('./'))
+	.pipe(dest(dist))
 
 	done()
 }
